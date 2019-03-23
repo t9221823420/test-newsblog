@@ -38,13 +38,15 @@ php artisan migrate
 php artisan serve
 
 управление контентом происходит на странице по ссылке:
+
 Категории : /manager/category
+
 Новости : /manager/news
 
 ## Использованы сторонние расширения
 
-- **[Nayjest Grids](https://github.com/Nayjest/Grids)**
-- **[Kris Form builder](https://github.com/kristijanhusak/laravel-form-builder)**
+- **[Nayjest Grids](https://github.com/Nayjest/Grids)** - для формирования Grid-а на странице Index-ом
+- **[Kris Form builder](https://github.com/kristijanhusak/laravel-form-builder)** - для формирования форм редактирования сущностей
 
 ## License
 
