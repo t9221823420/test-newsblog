@@ -20,6 +20,12 @@ class CreateCategoriesTable extends Migration
 	        $table->string('title');
 	        
         });
+    
+        \Illuminate\Support\Facades\DB::table(Category::tableName())->insert(
+            [
+                'title' => 'Sample Category',
+            ]
+        );
     }
 
     /**

@@ -26,7 +26,27 @@ php 7.1
 - **[Nayjest Grids](https://github.com/Nayjest/Grids)**
 - **[Kris Form builder](https://github.com/kristijanhusak/laravel-form-builder)**
 
-## Использованы сторонние расширения
+## Установка
+
+необходимо выполнить следующую команду в окне терминала:
+
+composer create-project yozh/test-newsblog:dev-master
+
+после этого необходимо настроить файл .env в котором необходимо указать учетные данные для доступа к Базе Данных
+
+после этого необходимо применить миграции командой:
+
+php artisan migrate
+
+запуск встроенного сервера осуществляется командой:
+
+php artisan serve
+
+управление контентом происходит на странице по ссылке:
+Категории : /manager/category
+Новости : /manager/news
+
+после чего можно приступить к заполнению новостей
 
 ## License
 

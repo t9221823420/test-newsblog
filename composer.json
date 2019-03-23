@@ -1,7 +1,7 @@
 {
     "name": "yozh/test-newsblog",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Test NewsBlog",
     "keywords": [
         "framework",
         "laravel"
