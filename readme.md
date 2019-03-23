@@ -45,7 +45,7 @@ php artisan serve
 
 ## Использованы сторонние расширения
 
-- **[Nayjest Grids](https://github.com/Nayjest/Grids)** - для формирования Grid-а на странице Index-ом
+- **[Nayjest Grids](https://github.com/Nayjest/Grids)** - для формирования Grid-а на странице с Index-ом
 - **[Kris Form builder](https://github.com/kristijanhusak/laravel-form-builder)** - для формирования форм редактирования сущностей
 
 ## License
