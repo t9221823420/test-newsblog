@@ -28,34 +28,37 @@ class CategoryController extends CRUDController
     }
 
     /**
-     * @param Request $request
      * @param FormBuilder $formBuilder
      * @param \App\Models\BaseModel $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, FormBuilder $formBuilder, $category)
+    public function edit(FormBuilder $formBuilder, $category)
     {
         $model = Category::findOrFail((int)$category);
 
-        return parent::edit($request, $formBuilder, $model);
+        return parent::edit($formBuilder, $model);
     }
 
     /**
-     * @param Request $request
      * @param FormBuilder $formBuilder
      * @param $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FormBuilder $formBuilder, $category)
+    public function update(FormBuilder $formBuilder, $category)
     {
         $model = Category::findOrFail((int)$category);
 
-        return parent::update($request, $formBuilder, $model);
+        return parent::update($formBuilder, $model);
     }
 
-    public function store(Request $request, FormBuilder $formBuilder, Category $model)
+    /**
+     * @param FormBuilder $formBuilder
+     * @param Category $model
+     * @return \Illuminate\Http\Response
+     */
+    public function store(FormBuilder $formBuilder, Category $model)
     {
-        return parent::update($request, $formBuilder, $model);
+        return parent::update($formBuilder, $model);
     }
 
     /**

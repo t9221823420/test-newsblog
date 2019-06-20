@@ -33,40 +33,37 @@ class NewsController extends CRUDController
     }
 
     /**
-     * @param Request $request
      * @param FormBuilder $formBuilder
      * @param $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, FormBuilder $formBuilder, $news)
+    public function edit(FormBuilder $formBuilder, $news)
     {
         $model = News::findOrFail((int)$news);
 
-        return parent::edit($request, $formBuilder, $model);
+        return parent::edit($formBuilder, $model);
     }
 
     /**
-     * @param Request $request
      * @param FormBuilder $formBuilder
      * @param $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FormBuilder $formBuilder, $news)
+    public function update(FormBuilder $formBuilder, $news)
     {
         $model = News::findOrFail((int)$news);
 
-        return parent::update($request, $formBuilder, $model);
+        return parent::update($formBuilder, $model);
     }
 
     /**
-     * @param Request $request
      * @param FormBuilder $formBuilder
      * @param News $model
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, FormBuilder $formBuilder, News $model)
+    public function store(FormBuilder $formBuilder, News $model)
     {
-        return parent::update($request, $formBuilder, $model);
+        return parent::update($formBuilder, $model);
     }
 
     /**

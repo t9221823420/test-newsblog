@@ -132,9 +132,7 @@ abstract class CRUDController extends Controller
         }
 
         $form = $this->_buildForm($formBuilder);
-
         $form->redirectIfNotValid();
-
         $model->fill($form->getFieldValues())->save();
 
         return redirect()->route("{$this->_resourceId()}.index");
@@ -167,9 +165,7 @@ abstract class CRUDController extends Controller
                 'name' => 'Actions',
                 'callback' => function ($val, ObjectDataRow $row) {
 
-                    /**
-                     * @var BaseModel $model
-                     */
+                    /** @var BaseModel $model */
                     $model = $row->getSrc();
                     $resourceId = get_class($model)::resourceId();
 
@@ -181,5 +177,7 @@ abstract class CRUDController extends Controller
                 },
             ];
         }
+
+        return \Grids::make($config);
     }
 }

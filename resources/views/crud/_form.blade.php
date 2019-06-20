@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: bw
- * Date: 22.03.2019
- * Time: 23:05
- */
-?>
 <div class="form">
 
     @if ($errors->any())
@@ -18,11 +10,8 @@
         </div>
     @endif
 
-        <form method="{{ $method ?? 'post' }}" action="{{ route( "$resourceId.$action") }}">
-
-            @yield('fields')
-
-        </form>
+    <form method="{{ $method ?? 'post' }}" action="{{ route( "$resourceId.$action") }}">
+        @yield('fields')
+    </form>
 
 </div>
-

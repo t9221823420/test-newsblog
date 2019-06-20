@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: bw
- * Date: 23.03.2019
- * Time: 19:39
- */
-?>
 @extends('layouts.app')
 
 @section('content')
@@ -17,7 +9,7 @@
     <form action="{{ route( $model::resourceId() . '.destroy',[$model->id]) }}" method="POST">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}
-        <button class="btn btn-danger">Delete User</button>
+        <button class="btn btn-danger">Delete</button>
     </form>
 
 @foreach ($model->getAttributes() as $attrName => $value)
