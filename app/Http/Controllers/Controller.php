@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\News;
+use App\Models\Category;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -12,29 +12,36 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    
-    public function home( $category = null )
+
+    /**
+     * @param null $category
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function home($category = null)
     {
-        $builder = News::orderBy( 'created_at', 'desc' )->with( 'Category' );
-        
-        if( $category ) {
-            
-            $builder->where( 'category_id', (int)$category );
-            $category = Category::find( (int)$category );
+        $builder = News::orderBy('created_at', 'desc')->with('Category');
+
+        if ($category) {
+            $builder->where('category_id', (int)$category);
+            $category = Category::find((int)$category);
         }
-        
-        return view( 'home', [
+
+        return view('home', [
             'categories' => Category::get(),
-            'news'       => $builder->get(),
-            'category'   => $category ?? null,
-        ] );
+            'news' => $builder->get(),
+            'category' => $category ?? null,
+        ]);
     }
-    
-    public function news( News $news )
+
+    /**
+     * @param News $news
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function news(News $news)
     {
-        return view( 'news.view', [
+        return view('news.view', [
             'categories' => Category::get(),
             'model' => $news,
-        ] );
+        ]);
     }
 }
