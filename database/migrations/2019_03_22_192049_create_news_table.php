@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use App\Models\News;
+use App\Models\Category;
 
 class CreateNewsTable extends Migration
 {
@@ -24,7 +25,7 @@ class CreateNewsTable extends Migration
 		    $table->text('text');
 		
 		    $table->foreign('category_id')
-		          ->references('id')->on(\App\Models\Category::tableName())
+		          ->references('id')->on(Category::tableName())
 		          ->onUpdate('cascade')
 		          ->onDelete('restrict');
 		
